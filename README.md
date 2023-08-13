@@ -1,2 +1,2 @@
 # ProfileWebsite
-Website created to show information about me and my projects
+Code for website that is used as a portfolio and profile.

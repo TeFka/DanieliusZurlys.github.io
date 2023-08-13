@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Danielius Zurlys</title>
+    </head>
+    <body>
+        <div id="header">
+            <canvas id="backgroundCanv1"></canvas>
+            <h1>Danielius Zurlys</h1>
+            <p>
+                I am an undergraduate Electronic and Computer Engineer at The University of Nottingham,
+                with a strong set of practical programming and hardware skills,
+                a strong work ethic and enthusiasm to do challenging work even outside of the academic environment.
+                Currently searching for a job.
+            </p>
+            <ul id="options">
+                <li><img src="Resources/aboutMeImg.png"><h2>Profile</h2></li>
+                <li><img src="Resources/workImg.png"><h2>Experience</h2></li>
+                <li><img src="Resources/portfolioImg.png"><h2>Portfolio</h2></li>
+                <li><img src="Resources/contactImg.png"><h2>Contact</h2></li>
+            </ul>
+
+            <h3 id="skillsButton" onclick="showSkills()">Skills</h3>
+            <p>Programming languages: C/C++, Java, Python, HTML, CSS, JavaScript, PHP, SQL.</p>
+            <p>Applications/Extensions: OpenGL, OpenCV, Linux, freeRTOS, CMake, git, MATLAB, Qt, VTK, Kivy.</p>
+            <p>Hardware: Arduino, Raspberry Pi, STM32, ARTY S7.</p>
+            <p>Speaking languages: English, Lithuanian.</p>
+            
+        </div>
+        <main>
+            <canvas id="backgroundCanv2"></canvas>
+            <div class="card">
+                <div id="Experience">
+                    <h2>Experience</h2>
+                    <ul id="workOptions">
+                        <li>ZF Friedrichshafen: Electronics testing software placement student</li>
+                        <ul id="zfOptions">
+                            <li>Worked on the development of Testing Software GUI used for testing of PCB boards,
+                                used ‘Python’ and ‘Kivy’ for GUI creation and all its functions and interaction with systems.
+                                Developed part of the software to read radar data, visualize it and test its functionality.</li>
+                            <li>Worked on development of embedded software for PCB boards using C and ‘FreeRTOS’.
+                                Setup parallel processes for different systems and set up configurations in non-volatile memory.</li>
+                            <li>Worked on establishing UART, Ethernet, CAN and other connections between computer user interface and 
+                                embedded software of the PCB boards and exchanging information.</li>
+                            <li>Developed Experience working in a technology company as part of software team.</li>
+                        </ul>
+                        <li>PragmatIC: Apps Intern</li>
+                        <ul id="pragmaticOptions">
+                            <li>Developed an SPI application block using Verilog, simulated on GTKWave and tested using Vivado.
+                                Established SPI communication between Arduino and my SPI on the ARTY S7 board.</li>
+                            <li>Learned and worked on the development of I2C and UART blocks,
+                                creating working Verilog designs and successfully testing them on GTKWave.</li>
+                            <li>Developed experience in developing an electronic logic design.</li>
+                        </ul>
+                        <li>SmartSentry: Electronics Enginner Intern</li>
+                        <ul id="sentryOptions">
+                            <li>Developed electronnic PCB designs using Altium</li>
+                            <li>Developed 3D models</li>
+                            <li>Developed experience in developing an electronic logic design.</li>
+                        </ul>
+                    </ul>
+                </div>
+            </div>
+            <div class="card">
+                <div id="Certifications">
+                    <h2>Certifications</h2>
+                    <ul id="certificationOptions">
+                        <li>IET ICTTech registration</li>
+                        <p>Registration for design, development, implementation,
+                        installation, operation, problem solving and security of ICT applications,
+                        products, services and/or infrastructures.</p>
+                    </ul>
+                </div>
+            </div>
+            <div class="card">
+                <div id="Portfolio">
+                    <h2>Portfolio</h2>
+                    <a href="https://github.com/TeFka"><img src="Resources/githubImg.png"></a>
+                    <ul id="projectOptions">
+                    <li>Minecraft Clone</li>
+                    <p>
+                        A simple ‘Voxel’ type open world game – game world generated using Perlin noise algorithm,
+                        multithreading applied for performance.
+                    </p>
+                    <li>Simple 2D Games made using OpenGL and C++</li>
+                    <ul id="openglGamesOptions">
+                        <li>Breakout</li>
+                        <p>A breakout game including power-ups, screen changes and particle effects</p>
+                        <li>2D platformer</li>
+                        <p>A platformer with simple levels, enemies and a boss battle at the end.</p>
+                        <li>Tower defense</li>
+                        <p></p>
+                    </ul>
+                    <li>Algorithm simulator</li>
+                    <p></p>
+                    <li>Electronic logic gates design software</li>
+                    <p></p>
+                    </ul>
+                </div>
+            </div>
+            <div class="card">
+                <div id="Contact">
+                    <h2>Contacts</h2>
+                    <ul id="contactOptions">
+                        <li><a href="https://www.linkedin.com/in/danielius-zurlys-icttech/"><img src="Resources/linkedInImg.png"></a></li>
+                        <li><a href = "mailto:zurlys500@gmail.com?subject = Feedback&body = Message"><img src="Resources/gmailImg.png"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+    </body>
+    <script src="logicMain.js"></script>
+</html>
