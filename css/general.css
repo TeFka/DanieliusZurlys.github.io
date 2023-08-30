@@ -1,0 +1,193 @@
+
+*{
+
+  font-family: "Roboto", serif;
+
+}
+
+body {
+  font-family: "Roboto Condensed", sans-serif;
+  margin: 0;
+  background: rgb(130, 130, 130);
+  /*display: flex;
+  flex-direction: column;*/
+}
+
+main {
+  margin: 0 auto;
+}
+
+a { 
+
+  text-decoration: none;
+  cursor: pointer;
+
+}
+
+
+ul{
+
+
+
+}
+
+div{
+
+  margin: 0;
+  text-align: center;
+
+}
+
+/* Navigation */
+#nav {
+  background: #202144;
+  width: 100%;
+  display: flex;
+  color: white;
+  z-index:2;
+  position: absolute;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  list-style-type: none;
+  margin: 0;
+}
+
+#nav a:hover {
+  text-decoration: none;
+  color: cyan;
+}
+
+#nav li{
+
+  margin: 10px;
+  font-size: 20px;
+
+}
+
+#nav a{
+
+  color: white;
+
+}
+
+.active {
+  color: green;
+}
+
+/* Button Read more */
+.btn-readmore {
+  padding: 8px 24px;
+  border: 3px solid black;
+  transition: 0.4s;
+  font-weight: bold;
+  cursor: pointer;
+  background: white;
+  color: black;
+}
+
+.btn-readmore:hover {
+  background: blue;
+  text-decoration: none;
+  padding: 8px 44px 8px 44px;
+  color: white;
+}
+
+
+.btn-readmore a{
+
+  color: black;
+
+}
+
+.btn-readmore a:hover{
+
+  color: white;
+
+}
+
+
+/* Footer */
+footer {
+  padding: 1px;
+  color: #eee;
+  background: rgb(50, 50, 50);
+  margin-bottom: 0;
+  align-self: flex-end;
+}
+
+footer h4{
+
+
+}
+
+.inlineContent{
+
+ display: inline-block;
+
+}
+
+/*Tooltip mechanic*/
+.tooltip {
+  display: inline-block;
+  vertical-align: top;
+  color: black;
+  padding: 15px;
+  margin: 10px;
+  cursor: pointer;
+  position:relative;
+  
+}
+
+.tooltip h2{
+
+  color: black;
+
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  opacity: 0;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 10%;
+  position: absolute;
+  z-index: 1;
+  right: 0%;
+  transition: 1s;
+
+  display: flex;
+  
+}
+
+.tooltip .tooltiptext img{
+
+  margin: 5px;
+  width: 200px;
+  height: 200px;
+}
+
+.tooltip .tooltiptext h3{
+
+  margin: 5px;
+
+}
+
+.tooltip .tooltiptext::after {
+  content: " ";
+  position: absolute;
+  bottom: 100%; 
+  left: 50%;
+  margin-left: -5px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent black transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}

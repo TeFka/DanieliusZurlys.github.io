@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html>
     <head>
-		<link rel = 'stylesheet' href = '../siteCSS.css' />
-		<link rel = 'stylesheet' href = './Survivec.css' />
+		<link rel = 'stylesheet' href = '../css/general.css' />
+		<link rel = 'stylesheet' href = './SimpleCraft.css' />
         <title>Survival</title>
     </head>
     <body>
-	<?php include('../parts/header.php'); ?>
+		<ul id="nav">
+            <li>
+              <a href="../index.html">Profile</a>
+            </li>
+        </ul>
     <div id="manu">
         <h1>Survavic</h1>
-        <button onClick="playG(1,manu)">
-        Play</button>
+        <button onClick="playG(1,manu)">Play</button>
         <button>***</button>
         <button>***</button>
     </div>
     <div id="losx">
       <h1>You are dead</h1>
-      <button onClick="playG(0,losx)">
-      Respawn</button>  
-      <button onClick="showM(losx)">
-      Menu</button>
+      <button onClick="playG(0,losx)">Respawn</button>  
+      <button onClick="showM(losx)">Menu</button>
     </div>
     <div id="craftG">
-    <button onClick="showW(inv,0)">
-    Inventory</button>
+    <button onClick="showW(inv,0)">Inventory</button>
     <div id="close" onClick="closeW(craftG)">
     </div>
     <h1>Crafting</h1>
@@ -57,8 +57,7 @@
     </div>
     <h2 id="pickCraf"></h2>
     <div id="matCraf"></div>
-    <div id="crift" onClick="craftM()">
-    Craft</div>
+    <div id="crift" onClick="craftM()">Craft</div>
     </div>
     <div id="inventory">
     <div id="close" onClick="closeW(inv)">
@@ -96,7 +95,7 @@
     <canvas id="canv" 
     width="1200" height="600">
     </canvas>
-	<?php include('../parts/bottomFotter.php');?>
+
     <script>
     function id(di) {
 	return document.getElementById(di);

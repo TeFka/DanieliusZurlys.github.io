@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html>
     <head>
-	<link rel = 'stylesheet' href = '../siteCSS.css' />
+	<link rel = 'stylesheet' href = '../css/general.css' />
    <link rel = 'stylesheet' href = './Snake.css' />
 	<title>Snakec</title>
 </head>
     <body>
-	<?php include('../parts/header.php'); ?>
+
+	    <ul id="nav">
+            <li>
+              <a href="../index.html">Profile</a>
+            </li>
+        </ul>
+
 	<div class="gameArea">
     <div id="menu">
     <h1>Snakec</h1>
@@ -28,74 +34,67 @@
     </div>
        <h1>Modes</h1>
        <button id="normM"
-       onClick="chMode(normM)">
-       Normal</button> 
+       onClick="chMode(normM)">Normal</button> 
        <button id="crazM"
-       onClick="chMode(crazM)">
-       Crazy</button>
+       onClick="chMode(crazM)">Crazy</button>
        <button id="endM"
-       onClick="chMode(endM)">
-       Endless</button>
+       onClick="chMode(endM)">Endless</button>
     </div>
-    <div id="losr">
+    <div id="losr"> 
         <h1>You lose</h1>
-        <button onClick="pAgain(losr, 0)">
-        Play again</button>
-        <button onClick="showM('losr')">
-        Menu</button>
+        <button onClick="pAgain(losr, 0)">Play again</button>
+        <button onClick="showM('losr')">Menu</button>
     </div>
     <div id="winr">
         <h1>You win</h1>
-        <button onClick="pAgain(winr, 0)">
-        Play again</button>
-        <button onClick="showM('winr')">
-        Menu</button>
+        <button onClick="pAgain(winr, 0)">Play again</button>
+        <button onClick="showM('winr')">Menu</button>
     </div>
     <canvas id="canv" width="1000px" height="600px"></canvas>
-		</div>
-		<?php include('../parts/bottomFotter.php');?>
-        <script>
+	</div>
+
+    <script>
     var canv = document.getElementById("canv");
-var scor = document.getElementById("scor");
-var liv = document.getElementById("liv");
-var inf = document.getElementById("inf");
-var inf1 = document.getElementById("inf1");
-var inf2 = document.getElementById("inf2");
-var losr = document.getElementById("losr");
-var winr = document.getElementById("winr");
-var modr = document.getElementById("modr");
-var menu = document.getElementById("menu");
+    var scor = document.getElementById("scor");
+    var liv = document.getElementById("liv");
+    var inf = document.getElementById("inf");
+    var inf1 = document.getElementById("inf1");
+    var inf2 = document.getElementById("inf2");
+    var losr = document.getElementById("losr");
+    var winr = document.getElementById("winr");
+    var modr = document.getElementById("modr");
+    var menu = document.getElementById("menu");
 
-var ctx = canv.getContext("2d");
+    var ctx = canv.getContext("2d");
 
-var gridWMax = 50;
-var gridHMax = 40;
-var gridInfo = new Array(gridWMax);
+    var gridWMax = 50;
+    var gridHMax = 40;
+    var gridInfo = new Array(gridWMax);
 
-var snakeX = Math.floor(gridWMax/2);
-var snakeY = Math.floor(gridHMax/2);
-var partW = canv.width / gridWMax;
-var partH = canv.height / gridHMax;
-var snakeLength = 1;
-var trail = [];
-var lives = 5;
-var dx = 0;
-var dy = 0;
-var defaultSp = 10;
-var sp = defaultSp;
-var fruitX = 0;
-var fruitY = 0;
-var fruitS = partW/2;
-var fruitG = 1;
-var exit = false;
-var exitX = 0;
-var exitY = 0;
-var exitDefined = false;
-var lvl = 1;
-var lvlUp = 7;
-var play = false;
-var endlessM = false;
-var crazyM = false;
+    var snakeX = Math.floor(gridWMax/2);
+    var snakeY = Math.floor(gridHMax/2);
+    var partW = canv.width / gridWMax;
+    var partH = canv.height / gridHMax;
+    var snakeLength = 1;
+    var trail = [];
+    var lives = 5;
+    var dx = 0;
+    var dy = 0;
+    var defaultSp = 10;
+    var sp = defaultSp;
+    var fruitX = 0;
+    var fruitY = 0;
+    var fruitS = partW/2;
+    var fruitG = 1;
+    var exit = false;
+    var exitX = 0;
+    var exitY = 0;
+    var exitDefined = false;
+    var lvl = 1;
+    var lvlUp = 7;
+    var play = false;
+    var endlessM = false;
+    var crazyM = false;
 
 for (var i = 0; i < gridWMax; i++) {
   gridInfo[i] = new Array(gridHMax);

@@ -1,128 +1,129 @@
 <!DOCTYPE html>
 <html>
     <head>
-	<link rel = 'stylesheet' href = '../siteCSS.css' />
+	<link rel = 'stylesheet' href = '../css/general.css' />
     <link rel = 'stylesheet' href = './ShotBall.css' />
 	<title>ShotBall</title>
 	</head>
     <body>
-	<?php include('../parts/header.php'); ?>
+
+        <ul id="nav">
+            <li>
+              <a href="../index.html">Profile</a>
+            </li>
+        </ul>
+
 	<div class="gameArea">
-    <div id="menu">
-    <h1>Shotex</h1>
-    <svg width="340" height="350"></svg>
-    <button onClick="pAgain(menu)">Play</button>
-    <button onClick="showP(modes)">
-    Mode</button>
-    <button onClick="showP('diff')">
-    Difficulty</button>
+        <div id="menu">
+            <h1>Shotex</h1>
+            <svg width="340" height="350"></svg>
+            <button onClick="pAgain(menu)">Play</button>
+            <button onClick="showP(modes)">Mode</button>
+            <button onClick="showP('diff')">Difficulty</button>
+        </div>
+        <div id="modes">
+            <div class="close"
+            onClick="closeP(modes)"></div>
+
+            <h2>Modes</h2>
+
+            <button onclick="chMode(1)">1 Player</button>
+            <button onClick="chMode(2)">2 Players</button>
+        </div>
+        <div id="diff">
+            <div class="close"
+            onClick="closeP(difx)"></div>
+
+            <h2>Difficulty</h2>
+
+            <button id="ez" onClick="chDiff(1)">Easy</button>
+            <button id="nm" onClick="chDiff(2)">Normal</button>
+            <button id="hr" onClick="chDiff(3)">Hard</button>
+            <button id="ins" onClick="chDiff(4)">Insane</button>
+        </div>
+        <div id="winx1">
+
+            <h1>Blue Wins</h1>
+
+            <button onClick="pAgain(winx1)">Play Again</button>
+            <button onClick="showM(winx1)">Menu</button>
+        </div>
+        <div id="winx2">
+
+            <h1>Red Wins</h1>
+
+            <button onClick="pAgain(winx2)">Play Again</button>
+            <button onClick="showM(winx2)">Menu</button>
+        </div>
+        <canvas id="boom" width="1000" height="600"></canvas>
     </div>
-    <div id="modes">
-        <div class="close"
-        onClick="closeP(modes)"></div>
-        <h2>Modes</h2>
-        <button onclick="chMode(1)">
-        1 Player</button>
-        <button onClick="chMode(2)">
-        2 Players</button>
-    </div>
-    <div id="diff">
-        <div class="close"
-         onClick="closeP(difx)"></div>
-        <h2>Difficulty</h2>
-        <button id="ez" onClick="chDiff(1)">
-        Easy</button>
-        <button id="nm" onClick="chDiff(2)">
-        Normal</button>
-        <button id="hr" onClick="chDiff(3)">
-        Hard</button>
-        <button id="ins" onClick="chDiff(4)">
-        Insane</button>
-    </div>
-    <div id="winx1">
-        <h1>Blue Wins</h1>
-        <button onClick="pAgain(winx1)">
-        Play Again</button>
-        <button onClick="showM(winx1)">
-        Menu</button>
-    </div>
-    <div id="winx2">
-        <h1>Red Wins</h1>
-        <button onClick="pAgain(winx2)">
-        Play Again</button>
-        <button onClick="showM(winx2)">
-        Menu</button>
-    </div>
-     <canvas id="boom" width="1000" height="600"
-     ></canvas>
-     </div>
-	 <?php include('../parts/bottomFotter.php');?>
+
      <script>
-  var canv = document.getElementById("boom");
- var con1=document.getElementById("contrl1");
- var con2=document.getElementById("contrl2");
- var menuS=document.getElementById("menu");
- var winx1=document.getElementById("winx1");
- var winx2=document.getElementById("winx2");
- var modes=document.getElementById("modes");
- var difx=document.getElementById("diff");
-      var ctx = canv.getContext("2d");
-      
-      var W=canv.width;
-      var H=canv.height;
-      
-      var shipH=10;
-      var shipW=30;
-      
-      var move = 10;
-      
-      var shots1=[];
-      var shots2=[];
-      var shotS=shipW/8;
-      var shotSp = canv.width/20;
-      var shotn1 = false;
-      var shotn2 = false;
-         
-      var ship1X = canv.width/2-shipW/2;
-      var ship1Y = canv.height-shipH;
-      
-      var ship2X = canv.width/2-shipW/2;
-      var ship2Y = 0;
-      
-      var shipSp = canv.width/50;
-      
-      var ship1Sp = 0;
-      var ship2Sp = 0;
-      
-      var ship1hp = 5;
-      var ship2hp = 5;
-      
-      var ball1X = canv.width/2;;
-      var ball1Y = canv.height/4*3;
-      var ball2X = canv.width/2;
-      var ball2Y = canv.height/4;;
-      var ballS = 7;
-      var ballSp1X = 4;
-      var ballSp1Y = 4;
-      var ballSp2X = 4;
-      var ballSp2Y = 4
-      
-      var dmgMult1 = 0;
-      var dmgMult2 = 0;
-    
-      var wallW = 5;
-      var bWallL = 50;
-      var bWall1X=Math.random()*(W-bWallL);
-      var bWall1Y=H/4*3;
-      var bWall2X=Math.random()*(W-bWallL);
-      var bWall2Y=H/4;
-      
-      var oneP = true;
-      var twoP = false;
-      
-      var diff = 0;
-      
-      var play = false;
+        var canv = document.getElementById("boom");
+        var con1=document.getElementById("contrl1");
+        var con2=document.getElementById("contrl2");
+        var menuS=document.getElementById("menu");
+        var winx1=document.getElementById("winx1");
+        var winx2=document.getElementById("winx2");
+        var modes=document.getElementById("modes");
+        var difx=document.getElementById("diff");
+        var ctx = canv.getContext("2d");
+        
+        var W=canv.width;
+        var H=canv.height;
+        
+        var shipH=10;
+        var shipW=30;
+        
+        var move = 10;
+        
+        var shots1=[];
+        var shots2=[];
+        var shotS=shipW/8;
+        var shotSp = canv.width/20;
+        var shotn1 = false;
+        var shotn2 = false;
+            
+        var ship1X = canv.width/2-shipW/2;
+        var ship1Y = canv.height-shipH;
+        
+        var ship2X = canv.width/2-shipW/2;
+        var ship2Y = 0;
+        
+        var shipSp = canv.width/50;
+        
+        var ship1Sp = 0;
+        var ship2Sp = 0;
+        
+        var ship1hp = 5;
+        var ship2hp = 5;
+        
+        var ball1X = canv.width/2;;
+        var ball1Y = canv.height/4*3;
+        var ball2X = canv.width/2;
+        var ball2Y = canv.height/4;;
+        var ballS = 7;
+        var ballSp1X = 4;
+        var ballSp1Y = 4;
+        var ballSp2X = 4;
+        var ballSp2Y = 4
+        
+        var dmgMult1 = 0;
+        var dmgMult2 = 0;
+        
+        var wallW = 5;
+        var bWallL = 50;
+        var bWall1X=Math.random()*(W-bWallL);
+        var bWall1Y=H/4*3;
+        var bWall2X=Math.random()*(W-bWallL);
+        var bWall2Y=H/4;
+        
+        var oneP = true;
+        var twoP = false;
+        
+        var diff = 0;
+        
+        var play = false;
       
       function sleep(ms){
          var begin = new Date().getTime();

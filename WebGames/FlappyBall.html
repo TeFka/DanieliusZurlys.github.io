@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html>
    <head>
-	<link rel = 'stylesheet' href = '../siteCSS.css' />
+	<link rel = 'stylesheet' href = '../css/general.css' />
    <link rel = 'stylesheet' href = './FlappyBall.css' />
 	<title>FlappyBall</title>
 </head>
     <body>
-	<?php include('../parts/header.php'); ?>
+
+	    <ul id="nav">
+            <li>
+              <a href="../index.html">Profile</a>
+            </li>
+        </ul>
+
 	<div class="gameArea">
     <div id="manu">
     <h1>Flappy ball</h1>
-    <button onClick="pAgain(manu)">
-    Play</button>
+    <button onClick="pAgain(manu)">Play</button>
     <button>Difficulty</button>
     <button>***</button>
     </div>
@@ -23,7 +28,7 @@
     </div>
     <canvas id="canv" width="1000" height="600"></canvas>
 	</div>
-	<?php include('../parts/bottomFotter.php');?>
+
     <script>
     function id(di){
         return document.getElementById(di);

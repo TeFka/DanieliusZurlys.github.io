@@ -1,116 +1,679 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
-        <title>Danielius Zurlys</title>
-    </head>
-    <body>
-        <div id="header">
-            <canvas id="backgroundCanv1"></canvas>
-            <h1>Danielius Zurlys</h1>
-            <p>
-                I am an undergraduate Electronic and Computer Engineer at The University of Nottingham,
-                with a strong set of practical programming and hardware skills,
-                a strong work ethic and enthusiasm to do challenging work even outside of the academic environment.
-                Currently searching for a job.
-            </p>
-            <ul id="options">
-                <li><img src="Resources/aboutMeImg.png"><h2>Profile</h2></li>
-                <li><img src="Resources/workImg.png"><h2>Experience</h2></li>
-                <li><img src="Resources/portfolioImg.png"><h2>Portfolio</h2></li>
-                <li><img src="Resources/contactImg.png"><h2>Contact</h2></li>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/index.css">
+    <title>Danielius Zurlys</title>
+</head>
+
+<body>
+
+  <ul id="nav">
+      <li>
+        <a onClick="document.getElementById('certification_id').scrollIntoView();">Certification</a>
+      </li>
+      <li>
+        <a onClick="document.getElementById('projects_id').scrollIntoView();">Projects</a>
+      </li>
+      <li>
+        <a onClick="document.getElementById('experience_id').scrollIntoView();">Experience</a>
+      </li>
+      <li>
+        <a onClick="document.getElementById('skills_id').scrollIntoView();">Skills</a>
+      </li>
+      <li>
+        <a onClick="document.getElementById('contact_id').scrollIntoView();">Contacts</a>
+      </li>
+      <div style="clear: both;"></div>
+  </ul>
+
+  
+
+  <div class="context">
+    <h1>Danielius Zurlys</h1>
+    <h2>Electronic and Computer Engineering Student</h3>
+    <h3>I am a student at The University of Nottingham, with a strong set of practical programming and hardware skills,
+        strong work ethic and enthusiasm to do challenging work even outside of the academic environment
+        I have a keen interest in software engineering and embedded systems
+        I am currently open for working opportunities</h3>
+  </div>
+
+
+  <div class="area" >
+    <ul class="circles">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div >
+
+    <div class = "profileSection" id="certification_id">
+
+      <h2 class="titleHeader">Education/Certification</h2>
+
+      <div class="itemGrid">
+
+        <div class="tooltip">
+
+          <h3>Masters Degree at the university of Notttingham</h3>
+          <p>Received my integrated Master's degree of engineering from university of nottingham. The degree included placement year</p>
+          
+          <img src="Resources/notts.png">
+
+        </div>
+
+        <div class="tooltip">
+          
+          <h3>ICTTech registration</h3>
+          <p>Reveived ICT technician regsitration from Institution of Engineering and Technology
+            after demonstrating competence in this line of work</p>
+       
+          <img src="Resources/IET.jpg">
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class = "profileSection" id="projects_id">
+      
+      <h2 class="titleHeader">Project work</h2>
+
+      <ul>
+
+        <li class="projectPart">
+
+          <div class="projectPartText">
+
+            <h2>Embedded Work</h2>
+            <p>Developed C code to allow communication with electronic modules</p>
+          
+          </div>
+
+          <div  class="projectPartList">
+            <ul>
+              <li>
+                <div class = "btn-readmore" onclick="handleProjectInfo('GSMmoduleProj')">GSM module</div>
+              </li>
+              <li>
+                <div class="btn-readmore" onclick="handleProjectInfo('pressureSensorProj')">Pressure sensor</div>
+              </li>
+              <li>
+                <div class="btn-readmore" onclick="handleProjectInfo('temperatureSensorProj')">Temperature Sensor</div>
+              </li>
+              <li>
+                <div class="btn-readmore" onclick="handleProjectInfo('SDcardProj')">SD card</div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="projectDescription" id="GSMmoduleProj">
+
+              <ul>
+
+                <li>Used GMS SIM80 module to send data</li>
+                <li>UART communication was implemented</li>
+                <li>retrieved data from ultrasonic sensor to retrieve information</li>
+                <li>Sent data to a ThinkSpeak Server</li>
+
+              </ul>
+
+              <a href="https://github.com/TeFka/GSM_module_ThinkSpeak_Control"><img src="Resources/icons8-github-100.png"/></a>
+
+          </div>
+          <div class="projectDescription" id="pressureSensorProj">
+
+            <ul>
+
+              <li>Developed C code for handling ST LPS28 pressure sensor</li>
+              <li>I2C communication was implemented</li>
+              <li>Used the sensor as part of a bigger project</li>
+              <li>Code was developed with STM32 in mind</li>
+
             </ul>
 
-            <h3 id="skillsButton" onclick="showSkills()">Skills</h3>
-            <p>Programming languages: C/C++, Java, Python, HTML, CSS, JavaScript, PHP, SQL.</p>
-            <p>Applications/Extensions: OpenGL, OpenCV, Linux, freeRTOS, CMake, git, MATLAB, Qt, VTK, Kivy.</p>
-            <p>Hardware: Arduino, Raspberry Pi, STM32, ARTY S7.</p>
-            <p>Speaking languages: English, Lithuanian.</p>
-            
+            <a href="https://github.com/TeFka/ST_LPS28_PressureSensor_Control"><img src="Resources/icons8-github-100.png"/></a>
+
+          </div>
+          <div class="projectDescription" id="temperatureSensorProj">
+
+            <ul>
+
+              <li>Developed C code for handling Texas Instruments temperature sensor</li>
+              <li>SPI communication was implemented</li>
+              <li>Used the sensor as part of a bigger project</li>
+              <li>Code was developed with STM32 in mind</li>
+
+            </ul>
+
+            <a href="https://github.com/TeFka/TE_TMP126_Q1_Control"><img src="Resources/icons8-github-100.png"/></a>
+
+          </div>
+          <div class="projectDescription" id="SDcardProj">
+
+            <ul>
+
+              <li>Developed C code for handling and SD card</li>
+              <li>SPI communication was implemented</li>
+              <li>FatFS was used for file system handling</li>
+              <li>Code was developed with STM32 in mind</li>
+
+            </ul>
+
+            <a href="https://github.com/TeFka/FatFs32_SD_card_control"><img src="Resources/icons8-github-100.png"/></a>
+
+          </div>
+
+        </li>
+
+        <li class="projectPart">
+
+          <div class="projectPartText">
+
+            <h2>Visual projects</h2>
+            <p>Developed several projects including games and simulators using OpenGL or other low level tools</p>
+          
+          </div>
+
+          <div class="projectPartList">
+            <ul>
+              <li>
+                <div class="btn-readmore" onclick="handleProjectInfo('voxelProj')">Voxel game (Minecraft Clone)</div>
+              </li>
+              <li>
+                <div class="btn-readmore" onclick="handleProjectInfo('brickBreakoutProj')">Brick Breakout</div>
+              </li>
+              <li>
+                <div class="btn-readmore" onclick="handleProjectInfo('platformerProj')">2D platformer</div>
+              </li>
+              <li>
+                <div class="btn-readmore" onclick="handleProjectInfo('sortNoiseProj')">Sorting and Noise algorithms visual simulator</div>
+              </li>
+              <li>
+                <div class="btn-readmore" onclick="handleProjectInfo('multTicTacToeProj')">Multiplayer Tic-Tac-Toe</div>
+              </li>
+              <li>
+                <div class="btn-readmore" onclick="handleProjectInfo('multShootingProj')">Multiplayer Shooting Game</div>
+              </li>
+              <li>
+                <div class="btn-readmore" onclick="handleProjectInfo('towerDefProj')">Multiplayer Shooting Game</div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="projectDescription" id="voxelProj">
+
+            <ul>
+
+              <li>A voxel game created in an image of a game "Minecraft"</li>
+              <li>Developed using C++ and OpenGL</li>
+              <li>Automatic world generation based on perlin Noise</li>
+              <li>Threading implemented for performance and world generation handling</li>
+              <li>CMake used for program building</li>
+
+            </ul>
+
+            <a href="https://github.com/TeFka/MincraftClone"><img src="Resources/icons8-github-100.png"/></a>
+
+          </div>
+
+          <div class="projectDescription" id="brickBreakoutProj">
+
+            <ul>
+
+              <li>A simple "Brick Breakout" style game</li>
+              <li>Developed using C++ and OpenGL</li>
+              <li>Special effects and power ups added</li>
+              <li>User friendly level creator added</li>
+              <li>CMake used for program building</li>
+
+            </ul>
+
+            <a href="https://github.com/TeFka/Brick-Breaker"><img src="Resources/icons8-github-100.png"/></a>
+
+          </div>
+
+          <div class="projectDescription" id="platformerProj">
+
+            <ul>
+
+              <li>A simple 2D paltformer game with enemies and boses</li>
+              <li>Developed using C++ and OpenGL</li>
+              <li>Different enemy types and weapons added</li>
+              <li>User friendly level creator added</li>
+              <li>CMake used for program building</li>
+
+            </ul>
+
+            <a href="https://github.com/TeFka/2D-Platformer"><img src="Resources/icons8-github-100.png"/></a>
+
+          </div>
+
+          <div class="projectDescription" id="sortNoiseProj">
+
+            <ul>
+
+              <li>Program to visually show sorting and noise algorithm results and operation</li>
+              <li>Developed using C++ and OpenGL</li>
+              <li>An interface engine is implemented</li>
+              <li>GUI created to choose different algorithms</li>
+              <li>CMake used for program building</li>
+
+            </ul>
+
+            <a href="https://github.com/TeFka/Algorithm_Visual_Presenter"><img src="Resources/icons8-github-100.png"/></a>
+
+          </div>
+
+          <div class="projectDescription" id="multTicTacToeProj">
+
+            <ul>
+
+              <li>Simple Tic Tac Toe game</li>
+              <li>Developed using C++ and OpenGL</li>
+              <li>Enabled multiplayer interaction</li>
+              <li>CMake used for program building</li>
+
+            </ul>
+
+            <a href="https://github.com/TeFka/Multiplayer_Tic-Tac-Toe"><img src="Resources/icons8-github-100.png"/></a>
+
+          </div>
+
+          <div class="projectDescription" id="multShootingProj">
+
+            <ul>
+
+              <li>Developed C code for handling and SD card</li>
+              <li>SPI communication was implemented</li>
+              <li>FatFS was used for file system handling</li>
+              <li>Code was developed with STM32 in mind</li>
+
+            </ul>
+
+            <a href="https://github.com/TeFka/MultiplayerShooter"><img src="Resources/icons8-github-100.png"/></a>
+
+          </div>
+
+          <div class="projectDescription" id="towerDefProj">
+
+            <ul>
+
+              <li>Developed C code for handling and SD card</li>
+              <li>SPI communication was implemented</li>
+              <li>FatFS was used for file system handling</li>
+              <li>Code was developed with STM32 in mind</li>
+
+            </ul>
+
+            <a href="https://github.com/TeFka/Tower_Defense_Game"><img src="Resources/icons8-github-100.png"/></a>
+
+          </div>
+
+        </li>
+        
+        <li class="projectPart">
+
+          <div class="projectPartText">
+
+            <h2>University Projects</h2>
+            <p>Did several group projects as part of university course.</p>
+          
+          </div>
+
+          <div class="projectPartList">
+            <ul>
+              <li>
+                <div class="btn-readmore" onclick="handleProjectInfo('autonomousVehicleProj')">Autonomous Vehicle</div>
+              </li>
+              <li>
+                <div class="btn-readmore" onclick="handleProjectInfo('speedRadarProj')">Speed Radar</div>
+              </li>
+              <li>
+                <div class="btn-readmore" onclick="handleProjectInfo('modelViewProj')">3D Model Viewing Software</div>
+              </li>
+              <li>
+                <div class="btn-readmore" onclick="handleProjectInfo('peatProj')">Peat Bog Monitoring Device</div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="projectDescription" id="autonomousVehicleProj">
+
+            <ul>
+
+              <li>Build an autonomous vehicle</li>
+              <li>Vehicl was controlled using Arduino annd Raspberry Pi</li>
+              <li>Implemented Computer Vision using OpenCV</li>
+              <li>Vehicle function include line following, reaction to traffic lights, shape recognition and counting</li>
+              <li>FatFS was used for file system handling</li>
+              <li>Code was developed with STM32 in mind</li>
+
+            </ul>
+
+          </div>
+
+          <div class="projectDescription" id="speedRadarProj">
+
+            <ul>
+
+              <li>Developed C code for handling and SD card</li>
+              <li>SPI communication was implemented</li>
+              <li>FatFS was used for file system handling</li>
+              <li>Code was developed with STM32 in mind</li>
+
+            </ul>
+
+          </div>
+
+          <div class="projectDescription" id="modelViewProj">
+
+            <ul>
+
+              <li>Developed C code for handling and SD card</li>
+              <li>SPI communication was implemented</li>
+              <li>FatFS was used for file system handling</li>
+              <li>Code was developed with STM32 in mind</li>
+
+            </ul>
+
+          </div>
+
+          <div class="projectDescription" id="peatProj">
+
+            <ul>
+
+              <li>Developed C code for handling and SD card</li>
+              <li>SPI communication was implemented</li>
+              <li>FatFS was used for file system handling</li>
+              <li>Code was developed with STM32 in mind</li>
+
+            </ul>
+
+          </div>
+        </li>
+
+        <li class="projectPart">
+
+          <div class="projectPartText">
+
+            <h2>Electronic Simulations</h2>
+            <p>Developed virtual electronic projects mostly using Proteus8 to confirm operation </p>
+          
+          </div>
+
+          <div class="projectPartList">
+            <ul>
+              <li>
+                <div class="btn-readmore">LED Counter</div>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="projectDescription" id="towerDefProj">
+
+            <ul>
+
+              <li>Developed C code for handling and SD card</li>
+              <li>SPI communication was implemented</li>
+              <li>FatFS was used for file system handling</li>
+              <li>Code was developed with STM32 in mind</li>
+
+            </ul>
+
+            <a href="https://github.com/TeFka/Tower_Defense_Game"><img src="Resources/icons8-github-100.png"/></a>
+
+          </div>
+
+        </li>
+
+        <li class="projectPart">
+
+          <div class="projectPartText">
+
+            <h2>Web games</h2>
+            <p>Developed simple web games.</p>
+          
+          </div>
+
+          <div class="projectPartList">
+            <ul>
+              <li>
+                <div class="btn-readmore"><a href="./WebGames/Snake.html">Snake</a></div>
+              </li>
+              <li>
+                <div class="btn-readmore"><a href="./WebGames/FlappyBall.html">Flappy Ball</a></div>
+              </li>
+              <li>
+                <div class="btn-readmore"><a href="./WebGames/ShotBall.html">Shooting Tennis</a></div>
+              </li>
+              <li>
+                <div class="btn-readmore"><a href="./WebGames/SimpleCraft.html">SimpleCraft</a></div>
+              </li>
+            </ul>
+          </div>
+
+        </li>
+
+
+      </ul>
+
+    </div>
+
+    <div class = "profileSection" id="experience_id">
+
+      <h2 class="titleHeader">Work Experience</h2>
+
+      <ul id = "experienceList">
+
+        <li class="experiencePart">
+          <h2>ZF Friedrichshafen</h2>
+          <div>
+
+            <ul>
+
+              <li>Electronic Testing Software Developer</li>
+
+              <li>Worked on the development of Testing Software GUI used for testing of PCB boards,
+                  used ‘Python’ and ‘Kivy’ for GUI creation and all its functions and interaction with systems.
+                  Developed part of the software to read radar data, visualize it and test its functionality.</li>
+              
+              <li>Worked on development of embedded software for PCB boards using C and ‘FreeRTOS’.
+                  Setup parallel processes for different systems and set up configurations in non-volatile memory.</li>
+              
+              <li>Worked on establishing UART, Ethernet, CAN and other connections between computer user interface
+                  and embedded software of the PCB boards and exchanging information.</li>
+              
+              <li>Developed Experience working in a technology company as part of software team.</li>
+
+            </ul>
+
+            <img src="Resources/zf.png" />
+
+          </div>
+        </li>
+
+        <li class="experiencePart">
+          <h2>PragmatIC</h2>
+          <div>
+
+            <ul>
+
+              <li>Apps Inter</li>
+
+              <li>Developed an SPI application block using Verilog,
+                  simulated on GTKWave and tested using Vivado. 
+                  Established SPI communication between Arduino and my SPI on the ARTY S7 board.</li>
+              
+              <li>Learned and worked on the development of I2C and UART blocks,
+                  creating working Verilog designs and successfully testing them on GTKWave.</li>
+              
+              <li>Developed experience in developing an electronic logic design.</li>
+
+            </ul>
+
+            <img src="Resources/pragmatic.png" />
+
+          </div>
+        </li>
+
+        <li class="experiencePart">
+          <h2>Smart Sentry</h2>
+          <div>
+
+            <ul>
+
+              <li>Software Inter</li>
+
+              <li>Developed scanning GUI on raspberry pi allowing to scan barcodes and automatically upload them to server (IOT experience).
+                  Used python and kivy to develop GUI and Python Django to handle server database.</li>
+              
+              <li>Developed embedded code for EFR32MG21A020F1024IM32 to allow Bluetooth communication between devices.
+                  One device is initialized as provisioner and is capable to provision other devices that it discovered</li>
+              
+              <li>Developed and versioning software allowing to switch data between a file and a server.
+                  Work involved creating checksum for all data saved in a file to identify its uniqueness.
+                  Used python and Kivy to develop GUI and Python Django to handle server database.</li>
+              
+              <li>Developed PCBs using Altium</li>
+
+            </ul>
+
+            <img src="Resources/smartSentry.png" />
+
+          </div>
+        </li>
+
+      </ul>
+
+    </div>
+
+    <div class = "profileSection" id="skills_id">
+
+        <h2 class="titleHeader">Skills</h2>
+        <ul>
+
+          <li>
+            <h2>Programming Languages</h2>
+            <div class="itemGrid">
+
+              <div class="tooltip skillHigh"><h2>C/C++</h2><span class="tooltiptext"><h3>Very high usage in personal projects and University work</h3></span></div>
+              <div class="tooltip skillMedium"><h2>Assembly</h2><span class="tooltiptext"><h3>Usage in Univesity and personal work</h3></span></div>
+              <div class="tooltip skillHigh"><h2>VHDL</h2><span class="tooltiptext"><h3>Experience in university projects</h3></span></div>
+              <div class="tooltip skillHigh"><h2>Verilog</h2><span class="tooltiptext"><h3>A lot of experience from work at PragmatIC</h3></span></div>
+              <div class="tooltip skillHigh"><h2>Python</h2><span class="tooltiptext"><h3>A lot of experience from work at ZF ant SmartSentry work</h3></span></div>
+              <div class="tooltip skillLow"><h2>Java</h2><span class="tooltiptext"><h3>Usage in University Work</h3></span></div>
+              <div class="tooltip skillMedium"><h2>HTML</h2><span class="tooltiptext"><h3>High usage in personal work</h3></span></div>
+              <div class="tooltip skillMedium"><h2>CSS</h2><span class="tooltiptext"><h3>High usage in personal work</h3></span></div>
+              <div class="tooltip skillMedium"><h2>JavaScript</h2><span class="tooltiptext"><h3>High usage in personal work</h3></span></div>
+              <div class="tooltip skillMedium"><h2>PHP</h2><span class="tooltiptext"><h3>High usage in personal work</h3></span></div>
+              <div class="tooltip skillMedium"><h2>SQL</h2><span class="tooltiptext"><h3>High usage in personal work</h3></span></div>
+              <div class="tooltip skillMedium"><h2>MATLAB</h2><span class="tooltiptext"><h3>High usage in University work</h3></span></div>
+
+            </div>
+          </li>
+
+          <li>
+            <h2>Programming Tools</h2>
+            <div class="itemGrid">
+
+              <div class="tooltip skillHigh"><h2>OpenGL</h2><span class="tooltiptext"><h3>High usage in personal work</h3></span></div>
+              <div class="tooltip skillMedium"><h2>OpenCV</h2><span class="tooltiptext"><h3>Usage in university project</h3></span></div>
+              <div class="tooltip skillHigh"><h2>Qt</h2><span class="tooltiptext"><h3>Usage in university project</h3></span></div>
+              <div class="tooltip skillHigh"><h2>VTK</h2><span class="tooltiptext"><h3>Usage in university project</h3></span></div>
+              <div class="tooltip skillHigh"><h2>Kivy</h2><span class="tooltiptext"><h3>A lot of experience from work at ZF ant SmartSentry work</h3></span></div>
+              <div class="tooltip skillMedium"><h2>Linux</h2><span class="tooltiptext"><h3>Usage in university project</h3></span></div>
+              <div class="tooltip skillHigh"><h2>FreeRTOS</h2><span class="tooltiptext"><h3>A lot of experience from work at ZF</h3></span></div>
+            </div>
+          </li>
+
+          <li>
+            <h2>Programming Support Tools</h2>
+            <div class="itemGrid">
+
+              <div class="tooltip skillHigh"><h2>Git</h2><span class="tooltiptext"><h3>A lot of experience from all sources</h3></span></div>
+              <div class="tooltip skillHigh"><h2>CMake</h2><span class="tooltiptext"><h3>High usage in Univesity and personal work</h3></span></div>
+              <div class="tooltip skillMedium"><h2>IDEs</h2><span class="tooltiptext"><ul>
+                <li>CodeBlocks</li>
+                <li>Visual Studio Code</li>
+                <li>Xilinx</li>
+                <li>STM32CubeIDE</li>
+                <li>Vivado</li>
+                <li>PyCharm</li>
+                <li>Visual Studio</li>
+                <li>MATLAB</li>
+              </ul></span></div>
+
+            </div>
+          </li>
+
+          <li>
+            <h2>Eectronic Applications</h2>
+            <div class="itemGrid">
+
+              <div class="tooltip skillLow"><h2>LTSpice</h2><span class="tooltiptext"><h3>Usage in University work</h3></span></div>
+              <div class="tooltip skillLow"><h2>Plecs</h2><span class="tooltiptext"><h3>Usage in University work</h3></span></div>
+              <div class="tooltip skillMedium"><h2>Kicad</h2><span class="tooltiptext"><h3>High usage in Univesity and personal work</h3></span></div>
+              <div class="tooltip skillLow"><h2>Altium</h2><span class="tooltiptext"><h3>High usage in personal work</h3></span></div>
+
+            </div>
+          </li>
+
+          <li>
+            <h2>Hardware</h2>
+            <div class="itemGrid">
+
+              <div class="tooltip skillHigh"><h2>Arduino</h2><span class="tooltiptext"><h3>High usage in personal projects and University work</h3></span></div>
+              <div class="tooltip skillMedium"><h2>Raspberry Pi</h2><span class="tooltiptext"><h3>Experience from university work and work at SmartSentry</h3></span></div>
+              <div class="tooltip skillHigh"><h2>STM32</h2><span class="tooltiptext"><h3>High usage in University work</h3></span></div>
+              <div class="tooltip skillHigh"><h2>ESP32</h2><span class="tooltiptext"><h3>High usage in University work</h3></span></div>
+              <div class="tooltip skillMedium"><h2>ARTY7</h2><span class="tooltiptext"><h3>Experience from work at PragmatIC</h3></span></div>
+              <div class="tooltip skillHigh"><h2>PIC</h2><span class="tooltiptext"><h3>Experience personal projects and University work</h3></span></div>
+            </div>
+          </li>
+
+        </ul>
+    </div>
+
+    <div class = profileSection id="contact_id">
+
+      <h2>Contact</h2>
+      <div class="itemGrid">
+
+        <div class="contactItem">
+          <a href="https://www.linkedin.com/in/danielius-zurlys-icttech/"><img src="Resources/icons8-linkedin-100.png"/></a>
         </div>
-        <main>
-            <canvas id="backgroundCanv2"></canvas>
-            <div class="card">
-                <div id="Experience">
-                    <h2>Experience</h2>
-                    <ul id="workOptions">
-                        <li>ZF Friedrichshafen: Electronics testing software placement student</li>
-                        <ul id="zfOptions">
-                            <li>Worked on the development of Testing Software GUI used for testing of PCB boards,
-                                used ‘Python’ and ‘Kivy’ for GUI creation and all its functions and interaction with systems.
-                                Developed part of the software to read radar data, visualize it and test its functionality.</li>
-                            <li>Worked on development of embedded software for PCB boards using C and ‘FreeRTOS’.
-                                Setup parallel processes for different systems and set up configurations in non-volatile memory.</li>
-                            <li>Worked on establishing UART, Ethernet, CAN and other connections between computer user interface and 
-                                embedded software of the PCB boards and exchanging information.</li>
-                            <li>Developed Experience working in a technology company as part of software team.</li>
-                        </ul>
-                        <li>PragmatIC: Apps Intern</li>
-                        <ul id="pragmaticOptions">
-                            <li>Developed an SPI application block using Verilog, simulated on GTKWave and tested using Vivado.
-                                Established SPI communication between Arduino and my SPI on the ARTY S7 board.</li>
-                            <li>Learned and worked on the development of I2C and UART blocks,
-                                creating working Verilog designs and successfully testing them on GTKWave.</li>
-                            <li>Developed experience in developing an electronic logic design.</li>
-                        </ul>
-                        <li>SmartSentry: Electronics Enginner Intern</li>
-                        <ul id="sentryOptions">
-                            <li>Developed electronnic PCB designs using Altium</li>
-                            <li>Developed 3D models</li>
-                            <li>Developed experience in developing an electronic logic design.</li>
-                        </ul>
-                    </ul>
-                </div>
-            </div>
-            <div class="card">
-                <div id="Certifications">
-                    <h2>Certifications</h2>
-                    <ul id="certificationOptions">
-                        <li>IET ICTTech registration</li>
-                        <p>Registration for design, development, implementation,
-                        installation, operation, problem solving and security of ICT applications,
-                        products, services and/or infrastructures.</p>
-                    </ul>
-                </div>
-            </div>
-            <div class="card">
-                <div id="Portfolio">
-                    <h2>Portfolio</h2>
-                    <a href="https://github.com/TeFka"><img src="Resources/githubImg.png"></a>
-                    <ul id="projectOptions">
-                    <li>Minecraft Clone</li>
-                    <p>
-                        A simple ‘Voxel’ type open world game – game world generated using Perlin noise algorithm,
-                        multithreading applied for performance.
-                    </p>
-                    <li>Simple 2D Games made using OpenGL and C++</li>
-                    <ul id="openglGamesOptions">
-                        <li>Breakout</li>
-                        <p>A breakout game including power-ups, screen changes and particle effects</p>
-                        <li>2D platformer</li>
-                        <p>A platformer with simple levels, enemies and a boss battle at the end.</p>
-                        <li>Tower defense</li>
-                        <p></p>
-                    </ul>
-                    <li>Algorithm simulator</li>
-                    <p></p>
-                    <li>Electronic logic gates design software</li>
-                    <p></p>
-                    </ul>
-                </div>
-            </div>
-            <div class="card">
-                <div id="Contact">
-                    <h2>Contacts</h2>
-                    <ul id="contactOptions">
-                        <li><a href="https://www.linkedin.com/in/danielius-zurlys-icttech/"><img src="Resources/linkedInImg.png"></a></li>
-                        <li><a href = "mailto:zurlys500@gmail.com?subject = Feedback&body = Message"><img src="Resources/gmailImg.png"></a></li>
-                    </ul>
-                </div>
-            </div>
-        </main>
-    </body>
-    <script src="logicMain.js"></script>
+        <div class="contactItem">
+          <a href = "mailto:zurlys500@gmail.com?subject = Feedback&body = Message"><img src="Resources/icons8-gmail-100.png"/></a>
+        </div>
+        <div class="contactItem">
+          <a href="https://github.com/TeFka"><img src="Resources/icons8-github-100.png"/></a>
+        </div>
+
+      </div>
+
+    </div>
+
+    <footer>
+
+      <h4>Made by Danielius Zurlys 2023.  Hosted by GitHub Pages</h4>
+
+    </footer>
+
+    <script src="javascript/general.js"></script>
+    <script src="javascript/index.js"></script>
+    
+</body>
+
 </html>
